@@ -5,9 +5,11 @@ import {DSC} from "../src/DSC.sol";
 import {Script} from "forge-std/Script.sol";
 
 contract DeployDSC is Script {
-    function run() external returns (Engine, DSC) {
+    function run() external returns (DSC) {
         vm.startBroadcast();
         DSC dsc = new DSC();
         vm.stopBroadcast();
+
+        return dsc;
     }
 }
